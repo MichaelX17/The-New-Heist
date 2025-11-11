@@ -16,7 +16,7 @@ export default function App() {
           className="mb-8 text-center"
         >
           <h1 className="text-4xl sm:text-5xl font-extrabold neon-text">The Next Heist</h1>
-          <h2 className="text-4xl sm:text-5xl font-extrabold neon-text">Countdown</h2>
+          <h2 className="text-4xl sm:text-5xl font-extrabold neon-text">GTA 6 Release Countdown</h2>
           <p className="mt-2 text-white/70">19 / 11 / 2026</p>
         </motion.header>
 
