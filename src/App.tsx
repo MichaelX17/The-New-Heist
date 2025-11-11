@@ -16,7 +16,11 @@ export default function App() {
         transition={{ duration: 0.8 }}
         className="hidden lg:block fixed top-1/2 left-4 -translate-y-1/2 z-20"
       >
-        <AdBanner adKey="099b2d329bd7582cb898c1dad44441f2" width={160} height={600} />
+        <AdBanner
+          adKey={process.env.REACT_APP_ADTERRA_KEY_LEFT ?? ''}
+          width={160}
+          height={600}
+        />
       </motion.div>
 
       <motion.div
@@ -25,7 +29,11 @@ export default function App() {
         transition={{ duration: 0.8 }}
         className="hidden lg:block fixed top-1/2 right-4 -translate-y-1/2 z-20"
       >
-        <AdBanner adKey="ec78d5eac17a4fbd44b6f31c8ab89dd6" width={160} height={300} />
+        <AdBanner
+          adKey={process.env.REACT_APP_ADTERRA_KEY_RIGHT ?? ''}
+          width={160}
+          height={600}
+        />
       </motion.div>
 
 
