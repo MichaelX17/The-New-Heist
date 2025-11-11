@@ -4,7 +4,7 @@ import { motion, useSpring } from "framer-motion";
 const TARGET = new Date("2026-11-19T00:00:00Z");
 const START_DATE = new Date("2025-11-06T00:00:00Z");
 
-// 🎌 Sistema de internacionalización
+// Sistema de internacionalización
 const translations = {
   en: {
     days: "days",
@@ -44,7 +44,7 @@ const translations = {
   }
 };
 
-// 🎯 Función para detectar el idioma del usuario
+// Función para detectar el idioma del usuario
 type SupportedLang = keyof typeof translations;
 
 function getUserLanguage(): SupportedLang {
@@ -72,7 +72,7 @@ function getTimeData(target: Date) {
   };
 }
 
-/* 🌀 Círculo genérico con su propio blur */
+/* Círculo genérico con su propio blur */
 function ProgressCircle({
   value,
   max,
@@ -159,7 +159,7 @@ export default function CountdownCircle() {
   const [time, setTime] = useState(() => getTimeData(TARGET));
   const [language, setLanguage] = useState<SupportedLang>('en'); // Idioma por defecto
 
-  // 🌐 Detectar idioma al cargar el componente
+  // Detectar idioma al cargar el componente
   useEffect(() => {
     const userLanguage = getUserLanguage();
     setLanguage(userLanguage);
@@ -195,7 +195,6 @@ export default function CountdownCircle() {
   return (
     <div className="flex flex-col items-center justify-center mt-8 gap-10 sm:gap-12">
 
-      {/* 🪩 Círculo principal - TAMAÑO AUMENTADO 50% */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -243,7 +242,6 @@ export default function CountdownCircle() {
         <motion.div
           className="absolute inset-0 flex flex-col items-center justify-center text-center"
         >
-          {/* TEXTO AUMENTADO ~50% */}
           <div className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white drop-shadow-2xl">
             {time.days}
           </div>
@@ -253,7 +251,7 @@ export default function CountdownCircle() {
         </motion.div>
       </motion.div>
 
-      {/* ⏰ Círculos secundarios con su propio fondo */}
+      {/* Círculos secundarios con su propio fondo */}
       <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
         <ProgressCircle value={time.fracHours} max={24} label={t.hours} gradientId="grad-hours" />
         <ProgressCircle value={time.fracMinutes} max={60} label={t.minutes} gradientId="grad-mins" />
