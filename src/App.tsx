@@ -1,6 +1,7 @@
 import React from 'react';
 import CountdownCircle from './components/CountdownCircle';
 import ArticleSection from './components/ArticleSection';
+import AdBanner from './components/AdBanner';
 import { motion } from 'framer-motion';
 
 export default function App() {
@@ -8,6 +9,28 @@ export default function App() {
     <div className="min-h-screen app-bg relative">
       {/* capa translúcida rosada encima del fondo */}
       <div className="absolute inset-0 bg-[rgba(255,77,166,0.25)] mix-blend-overlay"></div>
+
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="hidden lg:block fixed top-1/2 left-4 -translate-y-1/2 z-20"
+      >
+        <AdBanner adKey="099b2d329bd7582cb898c1dad44441f2" width={160} height={600} />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="hidden lg:block fixed top-1/2 right-4 -translate-y-1/2 z-20"
+      >
+        <AdBanner adKey="ec78d5eac17a4fbd44b6f31c8ab89dd6" width={160} height={300} />
+      </motion.div>
+
+
+
+      {/* CONTENIDO PRINCIPAL */}
       <main className="relative z-10 flex flex-col items-center justify-center min-h-screen py-24 px-6">
         <motion.header
           initial={{ y: -20, opacity: 0 }}
@@ -28,12 +51,11 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25 }}
             className="mt-6 text-center max-w-2xl"
-          >
-          </motion.div>
+          ></motion.div>
         </section>
       </main>
 
-      {/* se transición suave al pasar al artículo */}
+      {/* transición suave al pasar al artículo */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
