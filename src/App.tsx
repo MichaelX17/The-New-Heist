@@ -4,6 +4,7 @@ import ArticleSection from './components/ArticleSection';
 import AdBanner from './components/AdBanner';
 import { motion } from 'framer-motion';
 
+
 export default function App() {
   return (
     <div className="min-h-screen app-bg relative">
@@ -17,24 +18,25 @@ export default function App() {
         className="hidden lg:block fixed top-1/2 left-4 -translate-y-1/2 z-20"
       >
         <AdBanner
-          adKey={process.env.REACT_APP_ADTERRA_KEY_LEFT ?? ''}
+          adKey={(import.meta as any).env?.VITE_ADTERRA_KEY_LEFT ?? ''}
           width={160}
           height={600}
         />
+
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
         className="hidden lg:block fixed top-1/2 right-4 -translate-y-1/2 z-20"
       >
         <AdBanner
-          adKey={process.env.REACT_APP_ADTERRA_KEY_RIGHT ?? ''}
+          adKey={(import.meta as any).env?.VITE_ADTERRA_KEY_RIGHT ?? ''}
           width={160}
           height={600}
         />
-      </motion.div>
+      </motion.div> */}
 
 
 
