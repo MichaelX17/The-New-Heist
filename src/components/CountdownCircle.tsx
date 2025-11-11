@@ -195,7 +195,7 @@ export default function CountdownCircle() {
   return (
     <div className="flex flex-col items-center justify-center mt-8 gap-10 sm:gap-12">
 
-      {/* 🪩 Círculo principal - SOLUCIÓN CORREGIDA */}
+      {/* 🪩 Círculo principal - TAMAÑO AUMENTADO 50% */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -203,7 +203,7 @@ export default function CountdownCircle() {
         className="relative flex flex-col items-center justify-center rounded-full 
                    bg-white/10 backdrop-blur-lg border border-white/20 
                    shadow-[0_0_25px_rgba(255,255,255,0.1)]
-                   w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] lg:w-[300px] lg:h-[300px]"
+                   w-[300px] h-[300px] sm:w-[390px] sm:h-[390px] lg:w-[350px] lg:h-[350px]" // Aumentado ~50%
       >
         <svg viewBox="0 0 240 240" width="100%" height="100%">
           <defs>
@@ -243,10 +243,11 @@ export default function CountdownCircle() {
         <motion.div
           className="absolute inset-0 flex flex-col items-center justify-center text-center"
         >
-          <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-2xl">
+          {/* TEXTO AUMENTADO ~50% */}
+          <div className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white drop-shadow-2xl">
             {time.days}
           </div>
-          <div className="text-sm sm:text-base uppercase tracking-widest font-bold text-white/80">
+          <div className="text-base sm:text-lg uppercase tracking-widest font-bold text-white/80">
             {t.days}
           </div>
         </motion.div>
