@@ -25,21 +25,6 @@ export default function App() {
 
       </motion.div>
 
-      {/* <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        className="hidden lg:block fixed top-1/2 right-4 -translate-y-1/2 z-20"
-      >
-        <AdBanner
-          adKey={(import.meta as any).env?.VITE_ADTERRA_KEY_RIGHT ?? ''}
-          width={160}
-          height={600}
-        />
-      </motion.div> */}
-
-
-
       {/* CONTENIDO PRINCIPAL */}
       <main className="relative z-10 flex flex-col items-center justify-center min-h-screen py-24 px-6">
         <motion.header
