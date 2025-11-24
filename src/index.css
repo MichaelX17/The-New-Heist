@@ -21,10 +21,22 @@ body {
 }
 
 .app-bg {
-  background-image: url('/bg-02.webp');
-  background-size: cover;
-  background-position: center;
   position: relative;
+  /* Default background for smaller screens (gradient) */
+  background-image: linear-gradient(180deg, #ff74f3, #00C2FF);
+}
+
+@media (min-width: 768px) {
+  .app-bg {
+    /* Remove the gradient on large screens to allow background images to show */
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .bg-dawn { background-image: url('/bg-02.webp'); }
+  .bg-day { background-image: url('/bg-05.webp'); }
+  .bg-night { background-image: url('/bg-03.webp'); }
 }
 
 .glass-pink {

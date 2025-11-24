@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CountdownCircle from './components/CountdownCircle';
 import ArticleSection from './components/ArticleSection';
-import AdBanner from './components/AdBanner';
+// import AdBanner from './components/AdBanner';
 import { motion } from 'framer-motion';
 
 
 export default function App() {
+  const [bgClass, setBgClass] = useState('');
+
+  useEffect(() => {
+    const hour = new Date().getHours();
+
+    if (hour >= 4 && hour < 10) {
+      setBgClass('bg-dawn'); // Amanecer (4am - 10am) -> bg-02.webp
+    } else if (hour >= 10 && hour < 20) {
+      setBgClass('bg-day'); // Día (10am - 8pm) -> bg-01.webp
+    } else {
+      setBgClass('bg-night'); // Noche (8pm - 4am) -> bg-03.webp
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen app-bg relative">
+    <div className={`min-h-screen app-bg relative ${bgClass}`}>
       {/* capa translúcida rosada encima del fondo */}
       <div className="absolute inset-0 bg-[rgba(255,77,166,0.25)] mix-blend-overlay"></div>
 
@@ -17,11 +31,11 @@ export default function App() {
         transition={{ duration: 0.8 }}
         className="hidden lg:block fixed top-1/2 left-4 -translate-y-1/2 z-20"
       >
-        <AdBanner
+        {/* <AdBanner
           adKey={(import.meta as any).env?.VITE_ADTERRA_KEY_LEFT ?? ''}
           width={160}
           height={600}
-        />
+        /> */}
 
       </motion.div>
 
