@@ -144,10 +144,10 @@ function ProgressCircle({
       </svg>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-        <div className="text-xl sm:text-2xl font-extrabold text-white drop-shadow-lg">
+        <div className="text-xl sm:text-2xl font-extrabold text-white drop-shadow-[0_2px_3px_rgba(0,0,0,0.4)]">
           {fmt(value)}
         </div>
-        <div className="text-xs sm:text-sm uppercase tracking-wider font-bold text-white/80">
+        <div className="text-xs sm:text-sm uppercase tracking-wider font-bold text-white/80 drop-shadow-[0_2px_3px_rgba(0,0,0,0.4)]">
           {label}
         </div>
       </div>
@@ -242,10 +242,10 @@ export default function CountdownCircle() {
         <motion.div
           className="absolute inset-0 flex flex-col items-center justify-center text-center"
         >
-          <div className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white drop-shadow-2xl">
+          <div className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white drop-shadow-[0_4px_6px_rgba(0,0,0,0.5)]">
             {time.days}
           </div>
-          <div className="text-base sm:text-lg uppercase tracking-widest font-bold text-white/80">
+          <div className="text-base sm:text-lg uppercase tracking-widest font-bold text-white/80 drop-shadow-[0_2px_3px_rgba(0,0,0,0.4)]">
             {t.days}
           </div>
         </motion.div>
